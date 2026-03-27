@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 - 2026-03-27
+- Added ATS suggestions endpoint (rules-based) with unit and integration tests.
+- Added suggestion result model and service layer.
+- Updated backlog to remove completed ATS suggestions item.
+
 ## 0.1.1 - 2026-03-27
 - Initialized mono-repo structure (Angular frontend + Spring Boot backend).
 - Added ATS-safe resume templates (Modern Minimal, Professional Classic, Technical Focus, Executive).
