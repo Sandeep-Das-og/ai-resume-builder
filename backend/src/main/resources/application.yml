@@ -9,3 +9,10 @@ spring:
 app:
   templates:
     path: classpath:templates
+  ats:
+    maxFileSizeBytes: 2097152
+    maxParsedChars: 50000
+    allowedContentTypes:
+      - application/pdf
+      - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+      - text/plain
