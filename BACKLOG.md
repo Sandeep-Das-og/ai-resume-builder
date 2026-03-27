@@ -1,9 +1,6 @@
 # Backlog
 
 ## Backend
-- Implement resume upload endpoint (PDF/DOCX/TXT) with in-memory parsing.
-- Build ATS scoring engine (rules + AI) and expose scoring API.
-- Add AI suggestion endpoint with optional job description input.
 - Implement resume export endpoints (PDF and DOCX).
 - Add email send endpoint (Brevo integration, env-driven).
 - Add file validation (size, type) and basic rate limiting.
@@ -24,5 +21,4 @@
 - Add basic healthcheck endpoint.
 
 ## QA
-- Add unit tests for ATS scoring rubric.
 - Add parsing tests for PDF/DOCX/TXT.
