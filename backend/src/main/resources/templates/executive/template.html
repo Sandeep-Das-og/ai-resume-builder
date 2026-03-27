@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resume</title>
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div class="name">{{full_name}}</div>
+        <div class="headline">{{headline}}</div>
+        <div class="contact">{{email}} | {{phone}} | {{location}} | {{linkedin}}</div>
+      </header>
+
+      <section class="section highlight">
+        <h2>Key Achievements</h2>
+        <ul>
+          <li>{{ach_1}}</li>
+          <li>{{ach_2}}</li>
+          <li>{{ach_3}}</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Executive Summary</h2>
+        <p>{{summary}}</p>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">{{exp_1_title}} — {{exp_1_company}}</div>
+            <div class="item-dates">{{exp_1_dates}} · {{exp_1_location}}</div>
+          </div>
+          <ul>
+            <li>{{exp_1_bullet_1}}</li>
+            <li>{{exp_1_bullet_2}}</li>
+            <li>{{exp_1_bullet_3}}</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="item-header">
+            <div class="item-title">{{exp_2_title}} — {{exp_2_company}}</div>
+            <div class="item-dates">{{exp_2_dates}} · {{exp_2_location}}</div>
+          </div>
+          <ul>
+            <li>{{exp_2_bullet_1}}</li>
+            <li>{{exp_2_bullet_2}}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section grid-2">
+        <div>
+          <h2>Core Skills</h2>
+          <p>{{skills}}</p>
+        </div>
+        <div>
+          <h2>Education</h2>
+          <div class="item">
+            <div class="item-title">{{edu_1_degree}} — {{edu_1_school}}</div>
+            <div class="item-dates">{{edu_1_dates}}</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

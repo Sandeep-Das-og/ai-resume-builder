@@ -1,0 +1,32 @@
+plugins {
+  id 'base'
+}
+
+def frontendDir = file('frontend')
+def isWindows = System.getProperty('os.name').toLowerCase().contains('windows')
+def npmFromEnv = System.getenv('NVM_BIN')
+def npmExecutable = npmFromEnv ? "${npmFromEnv}/${isWindows ? 'npm.cmd' : 'npm'}" : (isWindows ? 'npm.cmd' : 'npm')
+
+tasks.register('frontendInstall', Exec) {
+  description = 'Install frontend dependencies.'
+  workingDir = frontendDir
+  commandLine npmExecutable, 'install'
+  onlyIf { frontendDir.exists() && file('frontend/package.json').exists() }
+}
+
+tasks.register('frontendBuild', Exec) {
+  description = 'Build the Angular frontend.'
+  workingDir = frontendDir
+  commandLine npmExecutable, 'run', 'build'
+  dependsOn 'frontendInstall'
+  onlyIf { frontendDir.exists() && file('frontend/package.json').exists() }
+}
+
+tasks.register('backendBuild') {
+  description = 'Build the Spring Boot backend.'
+  dependsOn ':backend:build'
+}
+
+tasks.named('build') {
+  dependsOn 'backendBuild', 'frontendBuild'
+}

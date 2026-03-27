@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+
+# Node
+node_modules/
+dist/
+/.angular/
+/frontend/.angular/
+
+# Java/Gradle
+/target/
+/build/
+/.gradle/
+*.log
+backend/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Env
+.env
+
+# OS
+.DS_Store

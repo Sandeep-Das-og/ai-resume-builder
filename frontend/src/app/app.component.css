@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color: #0f172a;
+}
+
+.shell {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.topbar {
+  border: 2px solid #0f172a;
+  padding: 18px 20px;
+  background: #f8fafc;
+}
+
+.brand {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 6px;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+button {
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #0f172a;
+  background: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: #0f172a;
+}
+
+.panel {
+  padding: 16px 18px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+}

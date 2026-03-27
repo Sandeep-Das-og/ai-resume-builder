@@ -1,0 +1,34 @@
+[
+  {
+    "id": "modern-minimal",
+    "name": "Modern Minimal",
+    "description": "Clean, compact, and ATS-safe with strong hierarchy.",
+    "htmlTemplate": "modern-minimal/template.html",
+    "cssTheme": "modern-minimal/theme.css",
+    "previewImageUrl": null
+  },
+  {
+    "id": "professional-classic",
+    "name": "Professional Classic",
+    "description": "Traditional spacing and clear section separators.",
+    "htmlTemplate": "professional-classic/template.html",
+    "cssTheme": "professional-classic/theme.css",
+    "previewImageUrl": null
+  },
+  {
+    "id": "technical-focus",
+    "name": "Technical Focus",
+    "description": "Skills-forward layout with projects emphasized.",
+    "htmlTemplate": "technical-focus/template.html",
+    "cssTheme": "technical-focus/theme.css",
+    "previewImageUrl": null
+  },
+  {
+    "id": "executive",
+    "name": "Executive",
+    "description": "Leadership-forward with achievements first.",
+    "htmlTemplate": "executive/template.html",
+    "cssTheme": "executive/theme.css",
+    "previewImageUrl": null
+  }
+]
