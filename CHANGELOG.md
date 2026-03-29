@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3 - 2026-03-29
+- Added export endpoints for PDF and DOCX generation.
+- Added export service, request model, and configuration.
+- Added unit/integration tests for export pipeline.
+- Added PDFBox and Apache POI dependencies.
+- Updated backlog to remove completed export item and stale completed items.
+
 ## 0.1.2 - 2026-03-27
 - Added ATS suggestions endpoint (rules-based) with unit and integration tests.
 - Added suggestion result model and service layer.
