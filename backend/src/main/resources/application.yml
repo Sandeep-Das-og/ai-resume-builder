@@ -18,3 +18,8 @@ app:
       - text/plain
   export:
     maxContentChars: 40000
+  email:
+    apiKey: ${BREVO_API_KEY:}
+    senderEmail: ${BREVO_SENDER_EMAIL:noreply@example.com}
+    senderName: ${BREVO_SENDER_NAME:AI Resume Builder}
+    maxContentChars: 20000

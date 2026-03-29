@@ -1,7 +1,6 @@
 # Backlog
 
 ## Backend
-- Add email send endpoint (Brevo integration, env-driven).
 - Add file validation (size, type) and basic rate limiting.
 
 ## Frontend

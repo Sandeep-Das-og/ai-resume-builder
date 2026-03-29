@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 - 2026-03-29
+- Added Brevo email send endpoint with validation and service layer.
+- Added Brevo HTTP client integration and payload models.
+- Added unit/integration tests for email sending workflow.
+- Updated backlog to remove completed email item.
+
 ## 0.1.3 - 2026-03-29
 - Added export endpoints for PDF and DOCX generation.
 - Added export service, request model, and configuration.
