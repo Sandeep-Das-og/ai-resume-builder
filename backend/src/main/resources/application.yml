@@ -23,3 +23,5 @@ app:
     senderEmail: ${BREVO_SENDER_EMAIL:noreply@example.com}
     senderName: ${BREVO_SENDER_NAME:AI Resume Builder}
     maxContentChars: 20000
+  security:
+    rateLimitPerMinute: 5

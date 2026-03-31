@@ -11,7 +11,7 @@ class EmailServiceTest {
   void buildsPayloadAndReturnsMessageId() {
     FakeBrevoClient client = new FakeBrevoClient();
     EmailProperties properties = new EmailProperties("test-key", "noreply@example.com", "AI Resume", 10000);
-    EmailService service = new EmailService(client, properties);
+    EmailService service = new EmailService(client, properties, new com.airesume.builder.security.ValidationGuard());
 
     EmailSendRequest request = new EmailSendRequest(
         "user@example.com",
@@ -33,7 +33,7 @@ class EmailServiceTest {
   void rejectsMissingContent() {
     FakeBrevoClient client = new FakeBrevoClient();
     EmailProperties properties = new EmailProperties("test-key", "noreply@example.com", "AI Resume", 10000);
-    EmailService service = new EmailService(client, properties);
+    EmailService service = new EmailService(client, properties, new com.airesume.builder.security.ValidationGuard());
 
     EmailSendRequest request = new EmailSendRequest(
         "user@example.com",

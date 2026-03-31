@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExportController {
   private final ExportService exportService;
   private final ExportProperties properties;
+  private final com.airesume.builder.security.ValidationGuard validationGuard;
 
-  public ExportController(ExportService exportService, ExportProperties properties) {
+  public ExportController(ExportService exportService, ExportProperties properties,
+      com.airesume.builder.security.ValidationGuard validationGuard) {
     this.exportService = exportService;
     this.properties = properties;
+    this.validationGuard = validationGuard;
   }
 
   @PostMapping(value = "/api/export/pdf", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -51,12 +54,8 @@ public class ExportController {
   }
 
   private void validateContent(String content) {
-    if (content.isBlank()) {
-      throw new IllegalArgumentException("Content is required.");
-    }
-    if (content.length() > properties.maxContentChars()) {
-      throw new IllegalArgumentException("Content exceeds max size.");
-    }
+    validationGuard.requireNotBlank(content, "content");
+    validationGuard.requireMaxLength(content, properties.maxContentChars(), "content");
   }
 
   private String sanitize(String content) {

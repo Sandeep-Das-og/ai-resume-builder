@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 public class EmailService {
   private final BrevoClient brevoClient;
   private final EmailProperties properties;
+  private final com.airesume.builder.security.ValidationGuard validationGuard;
 
-  public EmailService(BrevoClient brevoClient, EmailProperties properties) {
+  public EmailService(BrevoClient brevoClient, EmailProperties properties,
+      com.airesume.builder.security.ValidationGuard validationGuard) {
     this.brevoClient = brevoClient;
     this.properties = properties;
+    this.validationGuard = validationGuard;
   }
 
   public EmailSendResult send(EmailSendRequest request) {
@@ -22,10 +25,8 @@ public class EmailService {
       throw new IllegalArgumentException("Email content is required.");
     }
 
-    if (htmlContent.length() > properties.maxContentChars()
-        || textContent.length() > properties.maxContentChars()) {
-      throw new IllegalArgumentException("Email content exceeds max size.");
-    }
+    validationGuard.requireMaxLength(htmlContent, properties.maxContentChars(), "htmlContent");
+    validationGuard.requireMaxLength(textContent, properties.maxContentChars(), "textContent");
 
     BrevoEmailPayload payload = new BrevoEmailPayload(
         new BrevoSender(properties.senderName(), properties.senderEmail()),
