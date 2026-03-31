@@ -1,7 +1,6 @@
 # Backlog
 
 ## Backend
-- Add file validation (size, type) and basic rate limiting.
 
 ## Frontend
 - Build template selection and editor UI.

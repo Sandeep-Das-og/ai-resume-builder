@@ -6,9 +6,11 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class AtsFileValidator {
   private final AtsProperties properties;
+  private final com.airesume.builder.security.ValidationGuard validationGuard;
 
-  public AtsFileValidator(AtsProperties properties) {
+  public AtsFileValidator(AtsProperties properties, com.airesume.builder.security.ValidationGuard validationGuard) {
     this.properties = properties;
+    this.validationGuard = validationGuard;
   }
 
   public void validate(MultipartFile file) {
@@ -23,5 +25,6 @@ public class AtsFileValidator {
         || !properties.allowedContentTypes().contains(contentType)) {
       throw new IllegalArgumentException("Unsupported file type.");
     }
+    validationGuard.requireMaxLength(file.getOriginalFilename(), 120, "fileName");
   }
 }

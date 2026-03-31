@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.5 - 2026-03-31
+- Added per-IP rate limiting filter and configuration.
+- Added validation guard utility and applied to email/export/ATS file validation.
+- Added unit/integration tests for rate limiting and validation guard.
+- Updated backlog to remove completed validation/rate limiting item.
+
 ## 0.1.4 - 2026-03-29
 - Added Brevo email send endpoint with validation and service layer.
 - Added Brevo HTTP client integration and payload models.
